@@ -1,0 +1,42 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int customerCount = 0;
+    double salesAmount;
+    double totalSales = 0;
+    double averageSales;
+    
+    cout << "MINI SALES TRACKER" << "\n";
+
+    cout << "Enter Sales Amount (0 to stop): ";
+    cin >> salesAmount;
+
+    while (salesAmount != 0) {
+    customerCount++;
+    totalSales += salesAmount;
+
+    cout << "Enter Sales Amount (0 to stop): ";
+    cin >> salesAmount;
+    }
+
+    cout << "SALES SUMMARY" << "\n";
+
+    cout << fixed << setprecision(2);
+
+    cout << "Number of Customers: " << customerCount << "\n";
+    cout << "Total Sales Collected: " << totalSales <<  "\n";
+
+    if (customerCount > 0) {
+        averageSales = totalSales / customerCount;
+        cout << "Average Sales per Customer: " << averageSales <<  "\n";
+    }
+    else {
+        cout << "Average Sales per Customer: 0.00" <<  "\n";
+    }
+
+    cout << " " <<  "\n";
+
+    return 0;
+}
